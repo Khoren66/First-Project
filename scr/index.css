@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(244, 244, 250); 
+    font-family:'Open Sans', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    height: 90px;
+    background-color: rgba(9, 37, 128, 0.89);
+    border: groove 1px black;
+    margin-bottom: 15px;
+}
+.index_main{ 
+    display: flex;
+    justify-content: space-between;
+    height: 800px; 
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+section{
+    display: flex;
+    width: 78%;
+    flex-wrap: wrap;
+}
+aside{
+    width: 20%;
+    height: 100%;
+    background-color: rgba(22, 210, 223, 0.473);
+    border: groove 2px black;
+}
+.one{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(81, 94, 216, 0.719);
+    border: groove 2px black;
+}
+ a{
+    display: flex;
+    align-self: center;
+    color: white;
+    font-size: 25px; 
+    margin-right: 10px; 
+    text-decoration: none;  
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.form_element{
+    border: 1px solid black;
+    font-size: 20px;
+    width: 90%;
+    margin: 5%;
+}
+.form_login{
+    border: solid 2px black;   
+    margin-top: 5%;
+    width: 75%; 
+    height: 200px;
+}
+.main_reg_log{
+    display: flex;
+    justify-content: center;
+}
+
+.form_reg{
+    display: flex;
+    border: solid 2px black;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+form{    
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    justify-content: space-between;
+    width: 30%;
+    margin-top: 20px;
+}
+
+.reg_radio{
+    margin: 5%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.radio{
+    margin: 5px;
+}
+
+button{ 
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    margin: 20px;
+    background-color: rgba(9, 37, 128, 0.89);
+}
+button:active{
+    background-color: rgba(99, 136, 247, 0.89);
+}
+.mail_send{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkBox_email{
+    align-self: center;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+
