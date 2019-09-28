@@ -9,24 +9,67 @@ body{
 header{
     display: flex;
     justify-content: flex-end;
-    height: 90px;
+    height: 80px;
     background-color: rgba(9, 37, 128, 0.89);
     border: groove 1px black;
     margin-bottom: 15px;
 }
+.header_in_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: groove 1px black;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.footer_workSpace{
+    height: 70px;
+    background-color:  rgba(81, 94, 216, 0.719);
+    border: groove 1px black;
+    margin-top: 20px;   
+}
+.image_name_wSpace{
+    display: flex;
+    align-items: center;
+    margin-left:15px;
+}
+.img_workSpace{
+    border: groove 1px black;
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
 .index_main{ 
     display: flex;
     justify-content: space-between;
-    height: 800px; 
+    height: 480px; 
+}
+.main_workSpace{
+    border: groove 1px black;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.section_workSpace{
+    border: groove 1px black;
+    overflow-y: scroll;
+    height: 260px;
+}
+.section_list{
+    margin: 15px;
 }
 .container{
     display: flex;
     flex-direction: column;
+    margin:10px;
+    justify-content: center  
 }
-section{
+.section_index{
     display: flex;
     width: 78%;
     flex-wrap: wrap;
+    overflow-y: scroll;
 }
 aside{
     width: 20%;
@@ -38,6 +81,13 @@ aside{
     margin-bottom: 10px;
     width: 100%;
     height: 250px;
+    background-color: rgba(81, 94, 216, 0.719);
+    border: groove 2px black;
+}
+.posts{
+    display: flex;
+    margin-bottom: 15px;
+    height: 70px;  
     background-color: rgba(81, 94, 216, 0.719);
     border: groove 2px black;
 }
@@ -107,6 +157,29 @@ button{
     margin: 20px;
     background-color: rgba(9, 37, 128, 0.89);
 }
+.cr_new_post_button{
+    width: 140px;
+    height: 50px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(9, 37, 128, 0.89);
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;     
+}
+.cr_new_post_button:hover {
+    background-color: rgba(99, 136, 247, 0.89);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    transform: translateY(-7px);
+  }
+  .cr_new_post_button:active {
+    background-color: rgba(15, 33, 88, 0.89);
+    transform: translateY(-10px);
+    
+  }
 button:active{
     background-color: rgba(99, 136, 247, 0.89);
 }
