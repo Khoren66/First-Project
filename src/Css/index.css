@@ -64,7 +64,8 @@ header{
     display: flex;
     flex-direction: column;
     margin:10px;
-    justify-content: center  
+    justify-content: center;
+    height:95vh;
 }
 .section_index{
     display: flex;
