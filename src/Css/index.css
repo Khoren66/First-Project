@@ -6,77 +6,78 @@ body{
     background-color: rgb(244, 244, 250); 
     font-family:'Open Sans', sans-serif;
     overflow: hidden;
+    height: 100vh;
 }
 header{
     display: flex;
     justify-content: flex-end;
-    height: 80px;
+    height: 14vh;
     background-color: rgba(9, 37, 128, 0.89);
     border: groove 1px black;
-    margin-bottom: 15px;
+    margin-bottom: 1vh;
 }
 .header_in_main{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: groove 1px black;
-    margin-bottom: 15px;
+    margin-bottom: 2vh;
     font-size: 25px;
+    height: 20vh;
 }
 .footer_workSpace{
-    height: 70px;
+    height: 14vh;
     background-color:  rgba(81, 94, 216, 0.719);
     border: groove 1px black;
-    margin-top: 20px;   
+    margin-top: 2vh;   
 }
 .image_name_wSpace{
     display: flex;
     align-items: center;
-    margin-left:15px;
+    margin-left: 2vh;
 }
 .img_workSpace{
     border: groove 1px black;
-    width: 70px;
-    height: 70px;
-    border-radius: 40px;
-    margin-right: 5px;
+    height: 15vh;
+    border-radius: 8vh;
+    margin-right: 2vh;
 }
 .index_main{ 
     display: flex;
     justify-content: space-between;
-    /* //max-height: 480px;  */
-    max-height: 80vh;
+    max-height: 83vh;
 }
 .main_workSpace{
     border: groove 1px black;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    height: 67vh;
+    padding: 2vh;
 }
 .section_workSpace{
     border: groove 1px black;
     overflow-y: scroll;
-    height: 260px;
+    height: 41vh;
 }
 .section_list{
-    margin: 15px;
+    margin: 2vh;
 }
 .container{
     display: flex;
     flex-direction: column;
-    margin:10px;
-    justify-content: center;
+    height: 98vh;
+    margin: 1vh;
   
 }
 .section_index{
     display: flex;
     width: 78%;
+    height: 83vh;;
     flex-wrap: wrap;
     overflow-y: scroll;
 }
 aside{
-    width: 20%;
-    
+    width: 20%; 
     background-color: rgba(22, 210, 223, 0.473);
     border: groove 2px black;
 }
@@ -84,7 +85,7 @@ aside{
 .one{
     margin-bottom: 10px;
     width: 100%;
-    height: 35vh;
+    height: 30%;
     background-color: rgba(81, 94, 216, 0.719);
     border: groove 2px black;
 }
@@ -94,7 +95,7 @@ aside{
 .posts{
     display: flex;
     margin-bottom: 15px;
-    height: 70px;  
+    height: 15vh; 
     background-color: rgba(81, 94, 216, 0.719);
     border: groove 2px black;
 }
@@ -117,30 +118,26 @@ a:hover{
     width: 90%;
     margin: 5%;
 }
-.form_login{
-    border: solid 2px black;   
-    margin-top: 5%;
-    width: 75%; 
-    height: 200px;
-}
 .main_reg_log{
     display: flex;
     justify-content: center;
+    height: 83vh;
 }
 
 .form_reg{
-    display: flex;
-    border: solid 2px black;
-    flex-wrap: wrap;
-    align-content: space-evenly;
+    height: 60vh;
+}
+.form_login{
+    height: 35vh;;
 }
 form{    
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
     justify-content: space-between;
-    width: 30%;
-    margin-top: 20px;
+    width: 35%;
+    height: 50vh;
+    margin-top: 3vh;
 }
 
 .reg_radio{
@@ -159,19 +156,26 @@ button{
     justify-content: center;
     font-size: 15px;
     color: white;
-    width: 80px;
-    height: 40px;
-    margin: 20px;
+    width: 25%;
+    height: 20%;
+    margin: 5%;
     background-color: rgba(9, 37, 128, 0.89);
 }
+.right_bottom_margin {
+    margin-bottom: 0;
+}
+.submit_reg{
+    align-self: center;
+    height: 70%;
+}
 .cr_new_post_button{
-    width: 140px;
-    height: 50px;
+    width: 22vh;
+    height: 10vh;
     letter-spacing: 2.5px;
     font-weight: 500;
     color: white;
     background-color: rgba(9, 37, 128, 0.89);
-    border-radius: 45px;
+    border-radius: 10vh;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
