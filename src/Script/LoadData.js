@@ -90,12 +90,10 @@ const bloggersWrapper = document.getElementById("main_aside");
 }
 
 const onload = function () {
-  console.log('Run');
   fetchArticles(function (data) {
     showArticles(data)
   })
   fetchBloggers(function (data) {
-    console.log(data)
     showBloggers(data)
   })
 }
