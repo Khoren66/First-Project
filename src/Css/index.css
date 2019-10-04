@@ -101,10 +101,11 @@ padding: 1%;
 .blogger_name{
 display: flex;
 justify-content: center;
+margin-left: 2vh;
 }
 .aside-avatar{
     height: 80px;
-    border-radius: 50px;
+    border-radius: 50px; 
 }
 
 .one{
