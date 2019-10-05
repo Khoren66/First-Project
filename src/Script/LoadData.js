@@ -1,7 +1,7 @@
 
 const fetchArticles = function (callback) { // fetch all articles
   return fetch(
-    "https://5d8e0901370f02001405c7c9.mockapi.io/api/v1/postblog/postblog",
+    "http://5d98a52b61c84c00147d70ce.mockapi.io/api/v1/bloggers",
     {
       method: "GET"
     }
