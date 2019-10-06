@@ -17,7 +17,7 @@ const createPost = function () {
         return   
     }
     fetch(
-        "http://5d98a52b61c84c00147d70ce.mockapi.io/api/v1/bloggers",
+        "https://5d98a52b61c84c00147d70ce.mockapi.io/api/v1/bloggers",
         { 
             method: "POST",
             headers: {
