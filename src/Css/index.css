@@ -13,8 +13,8 @@ header{
     display: flex;
     justify-content: flex-end;
     height: 14vh;
-    background-color: rgba(9, 37, 128, 0.89);
-    border: groove 1px black;
+    background-color: rgba(12, 210, 60, 0.89);
+    border: groove 1px #0000001c;
     margin-bottom: 1vh; 
 }
 .logo_left_header{
@@ -25,17 +25,36 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: groove 1px black;
+    border: groove 1px #0000001c;
     margin-bottom: 2vh;
     font-size: 16px;
     height: 20vh;
 }
 .footer_workSpace{
+    display: flex;
     height: 14vh;
-    background-color:  rgba(81, 94, 216, 0.719);
-    border: groove 1px black;
+    background-color:  rgba(12, 210, 60, 0.89);
+    border: groove 1px #0000001c;
     margin-top: 2vh;   
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
 }
+
+
+.footer_index{
+    display: flex;
+    height: 14vh;
+    background-color:  rgba(12, 210, 60, 0.89);
+    border: groove 1px #0000001c;
+    margin-top: 2vh;   
+    margin-left: 1vh;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    width: inherit;
+}
+
 .image_name_wSpace{
     display: flex;
     align-items: center;
@@ -44,50 +63,60 @@ header{
     font-size: 25px;
 }
 .img_workSpace{
-    border: groove 1px black;
+    border: groove 1px #0000001c;
     height: 15vh;
     border-radius: 8vh;
     margin-right: 2vh;
 }
 .index_main{ 
     display: flex;
-    justify-content: space-between;
-    max-height: 83vh;
+    max-height: 84vh;
 }
 .main_workSpace{
-    border: groove 1px black;
+    border: groove 1px #0000001c;
     display: flex;
     flex-direction: column;
     height: 67vh;
     padding: 2vh;
 }
 .section_workSpace{
-    border: groove 1px black;
+    border: groove 1px #0000001c;;
     overflow-y: scroll;
     height: 41vh;
 }
+
+
 .section_list{
     margin: 2vh;
 }
-.container{
+.containers{
     display: flex;
     flex-direction: column;
     height: 98vh;
+    margin-left: 6vh;
+    margin-right: 6vh;
   
 }
 .section_index{
     display: flex;
-    width: 78%;
-    height: 83vh;;
+    width: 100%;
+    height: 68vh;
+    margin-left: 1vh;
     flex-wrap: wrap;
     overflow-y: scroll;
+}
+.section_footer {
+    display: flex;
+    width: 100%;
+    height: 83vh;
+    flex-wrap: wrap;
 }
 .article_header{
     display: flex;
     justify-content: space-between;
-    border: groove 2px black;
+    border: groove 2px #0000001c;
     padding: 1%;
-    background-color:rgba(9, 37, 128, 0.89);
+    background-color:rgba(12, 210, 60, 0.89);
     color: white;
 }
 .article_body{
@@ -96,7 +125,7 @@ padding: 1%;
 .main_aside{
     width: 20%; 
     background-color: white;
-    border: groove 2px black;
+    border: groove 2px #0000001c;
     overflow-y: auto;
     overflow-x:hidden;
 }
@@ -129,7 +158,7 @@ margin-left: 2vh;
     width: 100%;
     height: 30%;
     background-color: white;
-    border: groove 2px black;
+    border: groove 2px #0000001c;;
     box-shadow: 0 8px 6px -6px black;
 }
 .one:last-child{
@@ -140,7 +169,7 @@ margin-left: 2vh;
     margin-bottom: 15px;
     height: 15vh; 
     background-color: rgba(164, 227, 231, 0.938);
-    border: groove 2px black;
+    border: groove 2px #0000001c;
     border-bottom-right-radius: 20%;
     box-shadow: 0 8px 6px -6px black;
 }
@@ -158,7 +187,7 @@ a:hover{
 }
 
 .form_element{
-    border: 1px solid black;
+    border: 1px solid #0000006e;
     font-size: 16px;
     width: 90%;
     margin: 5%;
@@ -178,7 +207,7 @@ a:hover{
 .formD{    
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid black;
+    border: 2px solid #0000001c;
     justify-content: space-between;
     width: 35%;
     margin-top: 3vh;
@@ -198,12 +227,11 @@ a:hover{
 button{ 
     display: flex;
     justify-content: center;
-    /* font-size: 15px; */
     color: white;
     width: 25%;
     height: 20%;
     margin: 5%;
-    background-color: rgba(9, 37, 128, 0.89);
+    background-color:rgba(12, 210, 60, 0.89);
 }
 .right_bottom_margin {
     margin-bottom: 0;
@@ -218,7 +246,7 @@ button{
     letter-spacing: 2.5px;
     font-weight: 500;
     color: white;
-    background-color: rgba(9, 37, 128, 0.89);
+    background-color: rgba(12, 210, 60, 0.89);
     border-radius: 10vh;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
@@ -227,17 +255,17 @@ button{
     font-size: 16px; 
 }
 .cr_new_post_button:hover {
-    background-color: rgba(99, 136, 247, 0.89);
+    background-color: rgba(112, 221, 10, 0.89);
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     transform: translateY(-7px);
   }
   .cr_new_post_button:active {
-    background-color: rgba(15, 33, 88, 0.89);
+    background-color: rgba(1, 136, 30, 0.89);
     transform: translateY(-10px);
     
   }
 button:active{
-    background-color: rgba(99, 136, 247, 0.89);
+    background-color: rgba(1, 136, 30, 0.89);
 }
 .mail_send{
     width: 100%;
