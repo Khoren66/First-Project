@@ -18,9 +18,21 @@ header{
     margin-bottom: 1vh; 
 }
 .logo_left_header{
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: white;
 }
-
+.header_P{
+    display: flex;
+    height: 10vh;
+    width: 60vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Brush Script MT;
+    font-size: 4vh;
+    
+}
  .header_in_main{
     display: flex;
     justify-content: space-between;
