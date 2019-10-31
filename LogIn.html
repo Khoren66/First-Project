@@ -22,15 +22,15 @@
             <a href="index.html">Home</a>
         </header>
         <main class="main_reg_log">
-            <form class="formD form_login">
-                <input class="form_element" placeholder="User name" id="login" type="text" />
+            <div class="formD form_login">
+                <input class="form_element" placeholder="Email" id="email" type="email" />
                 <input class="form_element" type="password" placeholder="Password" id="password" />
-                <button class="left_bottom_margin " formaction="WorkSpace.html" type="submit">Login</button>
-                <button class="right_bottom_margin " formaction="Registration.html">Sign up</button>
-            </form>
+                <button class="left_bottom_margin" onclick='loginFetch()' id="login">Login</button>
+                <button class="right_bottom_margin " id="signUp">Sign up</button>
+            </div>
         </main>
     </div>
-
+<script src="src/Script/login.js"></script>
 </body>
 
 </html>

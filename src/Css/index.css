@@ -131,6 +131,13 @@ header{
     background-color:#199c1b;
     color: white;
 }
+.article_title{  
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: flex-end;
+}
+
 .article_body{
 padding: 1%;
 height:75%;
@@ -203,6 +210,7 @@ a:hover{
     font-size: 16px;
     width: 90%;
     margin: 5%;
+    margin-bottom: 1%;
 }
 .main_reg_log{
     display: flex;
@@ -210,9 +218,9 @@ a:hover{
     height: 83vh;
 }
 
-.form_reg{
+/* .form_reg{
     height: 60vh;
-}
+} */
 .form_login{
     height: 35vh;;
 }

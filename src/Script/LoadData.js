@@ -1,11 +1,7 @@
+const newURl = 'https://it-blog-posts.herokuapp.com/api/posts/';
 
 const fetchArticles = function (callback) { // fetch all articles
-  return fetch(
-    "https://5d98a52b61c84c00147d70ce.mockapi.io/api/v1/bloggers",
-    {
-      method: "GET"
-    }
-  )
+  return fetch(newURl, {})
     .then(function (response) {
       return response.json().then(function (data) {
         return callback(data);
@@ -17,12 +13,7 @@ const fetchArticles = function (callback) { // fetch all articles
 }
 
 const fetchBloggers = function (callback) {
-  return fetch(
-    "https://5d8e0901370f02001405c7c9.mockapi.io/api/v1/postblog/users",
-    {
-      method: "GET"
-    }
-  )
+  return fetch("https://5d8e0901370f02001405c7c9.mockapi.io/api/v1/postblog/users", { method: "GET" })
     .then(function (response) {
       return response.json().then(function (data) {
         return callback(data);
@@ -34,57 +25,42 @@ const fetchBloggers = function (callback) {
 }
 
 const showArticles = function (data) { // show Articles
-	const articlesWrapper = document.getElementById("section_index");
+  const articlesWrapper = document.getElementById("section_index");
+  let tempalete = ''
   for (let i = 0; i < data.length; i++) {
-    const article = document.createElement('article');
-    const author = document.createElement('div');
-    const title = document.createElement('div');
-    const header = document.createElement('div');
-    const articalBody = document.createElement('div');
-
-    author.innerText = data[i].author;
-    title.innerText = data[i].title;
-    articalBody.innerHTML = data[i].description;
-
-    header.className = 'article_header';
-    author.className = "article_author";
-    title.className = "article_title";
-
-    header.appendChild(author);
-    header.appendChild(title);
-
-
-    articalBody.className = 'article_body';
-    article.className = "one";
-
-    article.appendChild(header);
-    article.appendChild(articalBody);
-    articlesWrapper.appendChild(article)
+    let row = `
+        <article class='one'>    
+        <div class='article_header'>
+        <div class='article_author'>${data[i].author}</div>
+        <div class='article_title'>${data[i].title}</div>
+        </div>
+        <div class='article_body'>${data[i].description}</div>
+        </article>`
+    tempalete += row;
   }
+  articlesWrapper.innerHTML = tempalete;
 }
 
 const showBloggers = function (data) { // show Articles
-const bloggersWrapper = document.getElementById("main_aside");
+  const bloggersWrapper = document.getElementById("main_aside");
+  let tempalete = ''
   for (let i = 0; i < data.length; i++) {
-    const blogger = document.createElement('div');
-    const avatar = document.createElement('img');
-    const name = document.createElement('div');
-
-    avatar.src = data[i].avatar;
-    name.innerText = data[i].name;
-
-    blogger.className = 'aside_blogg';
-    avatar.className = "aside-avatar";
-    name.className = "blogger_name";
-
-    blogger.appendChild(avatar);
-    blogger.appendChild(name);
-
-
-    bloggersWrapper.appendChild(blogger)
+    let row = `   
+    <div class='aside_blogg'>
+    <img src ='${data[i].avatar}' class='aside-avatar'></img>
+    <div class='blogger_name'>${data[i].name}</div>
+    </div>`
+    tempalete += row;
+  }
+  bloggersWrapper.innerHTML = tempalete;
+}
+const link = () => {
+  if (localStorage.getItem('key') !== null) {
+    const link_href = document.getElementById('link_login_profile');
+    link_href.href = 'WorkSpace.html';
+    link_href.innerHTML = 'My Profile';
   }
 }
-
 const onload = function () {
   fetchArticles(function (data) {
     showArticles(data)
@@ -92,4 +68,6 @@ const onload = function () {
   fetchBloggers(function (data) {
     showBloggers(data)
   })
+  link();
 }
+

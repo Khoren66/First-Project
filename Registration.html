@@ -20,10 +20,12 @@
             <a class="login" href="LogIn.html">Log in</a>
         </header>
         <main class="main_reg_log">
-            <form class="formD form_reg">
+            <div class="formD form_reg">
                 <input class="form_element" required placeholder="Fisrt Name" id="reg_firstName" type="text" />
-                <input class="form_element" required type="text" placeholder="Last Name" id="reg_lasttName" />
-                <select aria-placeholder="City" required class="form_element">
+                <input class="form_element" required type="text" placeholder="Last Name" id="reg_lastName" />
+                <input class="form_element" required type="email" placeholder="Email" id="email" />
+                <input class="form_element" required type="password" placeholder="Password" id="password" />
+                <select aria-placeholder="City" id="city" required class="form_element">
                     <option selected hidden value="">--Select City--</option>
                     <option value="yerevan">Yerevan</option>
                     <option value="gyumri">Gyumri</option>
@@ -36,11 +38,12 @@
                 </div>
                 <div class="mail_send">
                     <label class="checkBox_email"><input type=checkbox name=send_email> Send me Email</label>
-                    <button class="submit_reg" type="submit">Submit</button>
+                    <button class="submit_reg"  onclick="regFetch()" type="submit">Submit</button>
                 </div>
-            </form>
+            </div>
         </main>
     </div>
+    <script src="src/Script/login.js"></script>
 </body>
 
 </html>
