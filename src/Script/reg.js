@@ -1,5 +1,7 @@
 const firstname = document.getElementById('reg_firstName');
 const lastname = document.getElementById('reg_lastName');
+
+
 const password = document.getElementById('password');
 const email = document.getElementById('email');
 const city = document.getElementById('city');
@@ -23,7 +25,8 @@ const regFetch = () => {
             }
         })
         .then(response => response.json())
-        .then((data) => {window.open('Login.html');
+        .then((data) => {
+            window.location.href = 'Login.html';
             return data;
         })
         .catch(function (err) {
