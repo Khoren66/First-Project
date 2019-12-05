@@ -18,7 +18,7 @@ const Post = (props) => {
         <Card.Text>
         {props.post.description}
       </Card.Text>
-      <Button>Delete</Button>
+
       </Card.Body>
     </Card>
 
