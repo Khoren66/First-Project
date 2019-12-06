@@ -28,7 +28,7 @@ const Home = () => {
                     border: "solid gray",
                     overflowY: "scroll",
                     height: "93vh",
-                    width: "30%"
+                    minWidth:"fit-content"
                 }}>
                     {peoples.map(people => {
                         return <People key={people.id} people={people} />
