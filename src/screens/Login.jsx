@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 import API from '../api/index';
-import { Form, Button } from 'react-bootstrap'
+import Storage from '../services/Storage'
+import { Form, Button ,Modal} from 'react-bootstrap'
 
 
 const Login = ({ changeTab }) => {
   const [inputs, setInputs] = useState({});
+  const [showError, setShowError] = useState(false);
  
 
   const onHandleLogin= () => {
     console.log(inputs)
     API.peoples.loginFetch(inputs)
-    setTimeout(()=>changeTab("WORKSPACE"),1000)
+    if(Storage.get("token")){
+      setTimeout(()=>changeTab("WORKSPACE"),1000)
+    }  
+    else{
+      setShowError(true)
+    }
+    
   }
 
 
@@ -22,6 +30,15 @@ const Login = ({ changeTab }) => {
     })
     console.log(inputs)
   }
+
+  const handleClose=()=>{
+    setShowError(false)
+    setInputs({
+      email:"",
+      password:""
+    })
+  }
+  
 
   return (
     <div>
@@ -35,16 +52,24 @@ const Login = ({ changeTab }) => {
           border: "solid 1px",
           borderRadius: "10px"
         }}>
-          <Form.Group controlId="exampleForm.ControlInput1">
+          <Form.Group controlId="formBasicEmail">
+          <Modal show={showError} onHide={handleClose} animation={false}>
+      <h3 >Email or password is incorrect</h3>
+      <Modal.Footer>
+                        <Button className="btn-dark" onClick={handleClose}>
+                            Close
+                        </Button>
+                        </Modal.Footer>
+      </Modal>
             <Form.Label>Email address</Form.Label>
-            <Form.Control name="email" onChange={handleInputChange} type="email" placeholder="Enter email" />
+            <Form.Control name="email" value={inputs.email}  onChange={handleInputChange} type="email" placeholder="Enter email" />
             <Form.Text className="text-muted">
               We'll never controlshare your email with anyone else.
     </Form.Text>
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control name="password" onChange={handleInputChange} type="password" placeholder="Password" />
+            <Form.Control name="password"  value={inputs.password} onChange={handleInputChange}  type="password" placeholder="Password" />
           </Form.Group>
           <div className="Formbuttons" style={{
             display: "flex",
