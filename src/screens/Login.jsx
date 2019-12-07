@@ -59,7 +59,7 @@ const Login = ({ changeTab }) => {
         }}>
           <Form.Group controlId="formBasicEmail">
             <Modal show={showError} onHide={handleClose} animation={false}>
-              <h3 >Email or password is incorrect !!!</h3>
+              <h3 >Email or password is incorrect !!! <span>🖕</span></h3>
               <Modal.Footer>
                 <Button className="btn-dark" onClick={handleClose}>
                   Close
@@ -80,7 +80,7 @@ const Login = ({ changeTab }) => {
             display: "flex",
             justifyContent: "space-between"
           }}>
-            <Button onClick={onHandleLogin} className="btn-dark" variant="primary" type="button">
+            <Button  onClick={onHandleLogin} className="btn-dark" variant="primary" type="button">
               Submit</Button>
             <Button onClick={() => changeTab("SIGNUP")} className="btn-dark" variant="primary" type="button">
               Sign Up  </Button>

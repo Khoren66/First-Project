@@ -12,13 +12,17 @@ const Post = (props) => {
    
       <Card.Header style={{display:"flex",justifyContent:"space-between"}}>
       <Card.Title  >{props.post.author} </Card.Title>
+      <Card.Title></Card.Title>
         <Card.Title>{props.post.title}</Card.Title>
       </Card.Header>
       <Card.Body>
         <Card.Text>
         {props.post.description}
       </Card.Text>
-
+      <Card.Text> 
+        {props.tab==="WORKSPACE" &&
+      <Button className="btn-dark">Delete</Button>}
+      </Card.Text>
       </Card.Body>
     </Card>
 

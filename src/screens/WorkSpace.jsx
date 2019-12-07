@@ -4,7 +4,7 @@ import API from '../api/index';
 import { Button, Modal, Form } from 'react-bootstrap'
 import Storage from '../services/Storage'
 import ModalHeader from 'react-bootstrap/ModalHeader';
-const WorkSpace = () => {
+const WorkSpace = (tab) => {
     const [posts, setPosts] = useState([]);
     const [newPost, setNewPost] = useState({});
     const [user, setUser] = useState({});
@@ -17,12 +17,10 @@ const WorkSpace = () => {
         API.peoples.getPostsByID(userid)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                if(data.length!=0){
+                if(data.length!==0){
                 data.reverse()
                 setPosts(data)
-            }
-                
+            }      
             })
     }, [])
 
@@ -31,7 +29,6 @@ const WorkSpace = () => {
         API.peoples.getByID(userid)
             .then(response => response.json())
             .then(data => {if(data){
-                console.log(data)
                 setUser(data)
             }
             })
@@ -92,9 +89,9 @@ const WorkSpace = () => {
                     backgroundColor: "white"
                 }}>
                     {posts.length>0 && posts.map(post => {
-                        return <Posts key={post.id} post={post} personId={post.personId} />
+                        return <Posts key={post.id} post={post} tab={tab.tab} personId={post.personId} />
                     })}
-                    {posts.length==0 && <h2>Create you first post !!!</h2>}
+                    {posts.length===0 && <h2>Create you first post !!!</h2>}
                 </div>
 
 
@@ -116,7 +113,7 @@ const WorkSpace = () => {
                     </Modal.Footer>
                 </Modal>
             </div>
-            <div style={{ backgroundColor: "#343a40", position: "absolute", bottom: 0, width: "-webkit-fill-available", height: "7vh" }}><p style={{ color: "white", bottom: "0" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
+            <div style={{ backgroundColor: "#343a40", position: "absolute", bottom: 0, width: "-webkit-fill-available"}}><p style={{ color: "white", bottom: "0" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
         </div>
     )
 }

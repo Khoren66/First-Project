@@ -1,4 +1,4 @@
-import Storage from '../services/Storage'
+
 class PeoplesApi{
     constructor(params) {
       const { url, endpoint } = params;

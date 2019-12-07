@@ -6,7 +6,6 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
 import WorkSpace from './screens/WorkSpace';
-import Storage from './services/Storage'
 
 function App() {
   const [tab, setTab] = useState({tab: "HOME"})
@@ -16,10 +15,10 @@ function App() {
   return (
     <div className="App">
     <NavCr tab={tab.tab} changeTab={changeTab}/>
-    {tab.tab === "HOME" &&<Home/>}
+    {tab.tab === "HOME" &&<Home tab={tab.tab}/>}
     {tab.tab === "LOGIN" &&<Login changeTab={changeTab}/>}
     {tab.tab === "SIGNUP" &&<SignUp changeTab={changeTab}/>}
-    {tab.tab === "WORKSPACE" &&<WorkSpace changeTab={changeTab}/>}
+    {tab.tab === "WORKSPACE" &&<WorkSpace  tab={tab.tab} changeTab={changeTab}/>}
     </div>
   );
 }

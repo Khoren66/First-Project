@@ -3,7 +3,7 @@ import Posts from '../components/posts/posts';
 import API from '../api/index';
 import People from '../components/people/people';
 
-const Home = () => {
+const Home = (tab) => {
     const [posts, setPosts] = useState([]);
     const [peoples, setPeoples] = useState([]);
     useEffect(() => {
@@ -23,11 +23,10 @@ const Home = () => {
 
     return (
         <div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex",height:"90vh" }}>
                 <div style={{
                     border: "solid gray",
-                    overflowY: "scroll",
-                    height: "93vh",
+                    overflowY: "scroll",  
                     minWidth:"fit-content"
                 }}>
                     {peoples.map(people => {
@@ -41,15 +40,15 @@ const Home = () => {
                        
                         border: "solid gray",
                         overflowY: "auto",
-                        height: "85vh",
+                        
                        
                     }}>
                         {posts.map(post => {
-                            return <Posts key={post.id} post={post} />
+                            return <Posts key={post.id} tab={tab.tab} post={post} />
                         })}
 
                     </div>
-                    <div style={{ backgroundColor: "#343a40", height: "8vh" }}><p style={{ color: "white" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
+                    <div style={{ backgroundColor: "#343a40"}}><p style={{ color: "white" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
                 </div>
             </div>
 
