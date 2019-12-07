@@ -21,7 +21,7 @@ const Post = (props) => {
       </Card.Text>
       <Card.Text> 
         {props.tab==="WORKSPACE" &&
-      <Button className="btn-dark">Delete</Button>}
+      <Button onClick={()=>{props.remove(props.post)}} className="btn-dark">Delete</Button>}
       </Card.Text>
       </Card.Body>
     </Card>

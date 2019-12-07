@@ -18,13 +18,18 @@ class PostsApi {
   }
 
   post(newPost) {
-    console.log(this.fullURL+"?access_token="+Storage.get("userId"))
     return fetch(this.fullURL+"?access_token="+Storage.get("token"),{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(newPost)
+    }).then(res=>res.json())
+    .catch(err=>console.log(err))
+  }
+  remove(id) {
+    return fetch(this.fullURL+"/"+id,{
+        method: "DELETE",
     }).then(res=>res.json())
     .catch(err=>console.log(err))
   }

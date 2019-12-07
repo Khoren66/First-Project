@@ -56,7 +56,12 @@ const WorkSpace = (tab) => {
        setShow(false)
     }
 
-
+const onhandleRemove=(item)=>{
+    const filtered = posts.filter(elem => elem.id !== item.id)
+    API.posts.remove(item.id);
+    setPosts(filtered)
+    
+}
 
     return (
         <div>
@@ -89,7 +94,7 @@ const WorkSpace = (tab) => {
                     backgroundColor: "white"
                 }}>
                     {posts.length>0 && posts.map(post => {
-                        return <Posts key={post.id} post={post} tab={tab.tab} personId={post.personId} />
+                        return <Posts key={post.id} post={post} tab={tab.tab}  remove={onhandleRemove} personId={post.personId} />
                     })}
                     {posts.length===0 && <h2>Create you first post !!!</h2>}
                 </div>
