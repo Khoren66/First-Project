@@ -6,7 +6,7 @@ const SignUp = ({changeTab}) => {
 const signUpFunc=()=>{
     console.log(inputs)
     API.peoples.signFetch(inputs)
-    changeTab("WORKSPACE")
+    changeTab("LOGIN")
 
 }
 
@@ -30,7 +30,7 @@ const signUpFunc=()=>{
             }}>
                 <Form.Group >
                     <Form.Label>Name</Form.Label>
-                    <Form.Control onChange={handleInputChange} name="name" type="text" placeholder="Name" />
+                    <Form.Control onChange={handleInputChange} name="firstname" type="text" placeholder="Name" />
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Lastname</Form.Label>

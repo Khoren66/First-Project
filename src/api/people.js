@@ -35,13 +35,7 @@ class PeoplesApi{
           method: "POST",
           body: JSON.stringify(inputs),
           headers: {'Content-Type': 'application/json'}
-      }).then(response => {if (response.ok) { return response.json() }
-          else{throw new Error("Email or Password is incorrect")}})
-      .then((data) => {
-          Storage.set("token",data.id)
-          Storage.set("userId",data.userId)
-        })
-      .catch(function (err) {console.log("Error", err)})
+      })
      }
   
 

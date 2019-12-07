@@ -12,16 +12,18 @@ const Login = ({ changeTab }) => {
   const onHandleLogin = () => {
     console.log(inputs)
     API.peoples.loginFetch(inputs)
-    setTimeout(() => {
-      if (Storage.get("token")) {
+      .then(response => {
+        if (response.ok) { return response.json() }
+        else { throw new Error("Email or Password is incorrect") }
+      })
+      .then((data) => {
+        Storage.set("token", data.id)
+        Storage.set("userId", data.userId)
         changeTab("WORKSPACE")
-      }
-      else {
-        if (!Storage.get("token")) {
-          setShowError(true)
-        }
-      }
-    }, 500)
+      })
+      .catch(function (err) {
+        setShowError(true)
+      })
   }
 
 
@@ -57,7 +59,7 @@ const Login = ({ changeTab }) => {
         }}>
           <Form.Group controlId="formBasicEmail">
             <Modal show={showError} onHide={handleClose} animation={false}>
-              <h3 >Email or password is incorrect</h3>
+              <h3 >Email or password is incorrect !!!</h3>
               <Modal.Footer>
                 <Button className="btn-dark" onClick={handleClose}>
                   Close

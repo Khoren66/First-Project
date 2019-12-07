@@ -17,8 +17,12 @@ const WorkSpace = () => {
         API.peoples.getPostsByID(userid)
             .then(response => response.json())
             .then(data => {
+                console.log(data)
+                if(data.length!=0){
                 data.reverse()
                 setPosts(data)
+            }
+                
             })
     }, [])
 
@@ -26,9 +30,10 @@ const WorkSpace = () => {
         const userid = Storage.get("userId")
         API.peoples.getByID(userid)
             .then(response => response.json())
-            .then(data => {
+            .then(data => {if(data){
                 console.log(data)
                 setUser(data)
+            }
             })
     }, [])
     const { username, lastname } = user;
@@ -60,7 +65,8 @@ const WorkSpace = () => {
         <div>
             <div className="main" style={{
                 border: "solid black 1px",
-                margin: "3vh"
+                margin: "3vh",
+                backgroundColor: "#343a40"
             }}>
                 <div className="blogger" style={{
                     display: "flex",
@@ -70,7 +76,8 @@ const WorkSpace = () => {
                     margin: "3vh",
                     padding: "3vh",
                     justifyContent: "space-between",
-                    alignItems: "center"
+                    alignItems: "center",
+                    backgroundColor: "white"
                 }} >
                     <div className="name"><h3>{username} {lastname}</h3></div>
                     <div className="createPost">
@@ -81,11 +88,13 @@ const WorkSpace = () => {
                     margin: "3vh",
                     height: "51vh",
                     border: "solid black 1px",
-                    overflowY: "scroll"
+                    overflowY: "auto",
+                    backgroundColor: "white"
                 }}>
-                    {posts.map(post => {
+                    {posts.length>0 && posts.map(post => {
                         return <Posts key={post.id} post={post} personId={post.personId} />
                     })}
+                    {posts.length==0 && <h2>Create you first post !!!</h2>}
                 </div>
 
 
