@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import API from '../api/index';
-import Storage from '../services/Storage'
+import API from '../../api/index';
+import Storage from '../../services/Storage'
 import { Form, Button, Modal } from 'react-bootstrap'
-
+import './login.css'
 
 const Login = ({ changeTab }) => {
   const [inputs, setInputs] = useState({});
@@ -47,23 +47,15 @@ const Login = ({ changeTab }) => {
 
   return (
     <div>
-      <div style={{
-        display: "flex",
-        justifyContent: "center"
-      }}>
-        <Form style={{
-          marginTop: "50px",
-          padding: "10px",
-          border: "solid 1px",
-          borderRadius: "10px"
-        }}>
+      <div className='main'>
+        <Form className='formMain'>
           <Form.Group controlId="formBasicEmail">
-            <Modal show={showError} onHide={handleClose} animation={false}>
-              <h3 >Email or password is incorrect !!! <span>🖕</span></h3>
-              <Modal.Footer>
-                <Button className="btn-dark" onClick={handleClose}>
-                  Close
-                        </Button>
+            <Modal  show={showError} onHide={handleClose} animation={false}>
+              <Modal.Header className="modalStyle">
+                <h3 >Email or password is incorrect !!!</h3>
+                </Modal.Header>
+              <Modal.Footer className="modalStyle">
+                <Button className="btn-dark" onClick={handleClose}>Close</Button>
               </Modal.Footer>
             </Modal>
             <Form.Label>Email address</Form.Label>
@@ -80,14 +72,14 @@ const Login = ({ changeTab }) => {
             display: "flex",
             justifyContent: "space-between"
           }}>
-            <Button  onClick={onHandleLogin} className="btn-dark" variant="primary" type="button">
-              Submit</Button>
             <Button onClick={() => changeTab("SIGNUP")} className="btn-dark" variant="primary" type="button">
               Sign Up  </Button>
+            <Button  onClick={onHandleLogin} className="btn-dark" variant="primary" type="button">
+              Submit</Button>   
           </div>
         </Form>
       </div>
-      <div style={{ backgroundColor: "#343a40", position: "absolute", bottom: 0, width: "-webkit-fill-available", height: "7vh" }}><p style={{ color: "white", bottom: "0" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
+      <div className='footer'><p className="pFooter">Created By Khoren Ter-Hovhannisyan 2019</p></div>
     </div>
   )
 }

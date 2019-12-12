@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavCr from './components/Nav'
-import Home from './screens/Home';
-import Login from './screens/Login';
-import SignUp from './screens/SignUp';
-import WorkSpace from './screens/WorkSpace';
+import Home from './screens/Home/Home'
+import Login from './screens/Login/Login';
+import SignUp from './screens/SignUp/SignUp';
+import WorkSpace from './screens/WorkSpace/WorkSpace';
 
 function App() {
   const [tab, setTab] = useState({tab: "HOME"})

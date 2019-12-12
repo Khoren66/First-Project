@@ -1,0 +1,33 @@
+.mainW{
+    border: solid black 1px;
+    margin: 3vh;
+    background-color: #343a40;
+}
+.blogger{
+    display: flex;
+    border: solid black 1px;
+    border-radius: 10px;
+    height: 20vh;
+    margin: 3vh;
+    padding: 3vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.mainPostW{
+        margin: 3vh;
+        height: 51vh;
+        border: solid black 1px;
+        overflow-y: auto;
+        background-color: white;
+}
+.footerW{
+    background-color: #343a40;
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+}
+.footerWp{
+    color: white;
+    bottom: 0;
+}

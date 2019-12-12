@@ -27,6 +27,16 @@ class PostsApi {
     }).then(res=>res.json())
     .catch(err=>console.log(err))
   }
+edit(post){
+  return fetch(this.fullURL,{
+    method: "PUT",
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(post)
+})
+}
+
   remove(id) {
     return fetch(this.fullURL+"/"+id,{
         method: "DELETE",

@@ -7,7 +7,7 @@ const signOut=()=>{
   Storage.clear()
 }
     return (
-     <Navbar style={{height:"10vh"}} className="justify-content-between" bg="dark" variant="dark">
+     <Navbar style={{height:"10vh"}} className="justify-content-between navBar" bg="dark" variant="dark">
         <Nav>
       <Nav.Link style={{color:"white"}} onClick={()=>changeTab("HOME")} ><h3>BlogNews <span>📰</span></h3></Nav.Link>
     </Nav>
@@ -17,12 +17,7 @@ const signOut=()=>{
     {Storage.get("token") && <Nav.Link style={{color:"white"}} onClick={signOut} >Sign out</Nav.Link>}
     </Nav>
      </Navbar>
-   
-                   
-
-
-
-
+  
     )
 }
 

@@ -1,0 +1,13 @@
+.cardPost{
+    margin:15px;
+    padding:10px;
+    box-shadow:5px 10px 18px #888888;
+}
+.cardHeader{
+    display:flex;
+    justify-content:space-between;
+}
+.buttons{
+display: flex;
+justify-content: space-evenly;
+}

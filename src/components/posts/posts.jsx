@@ -1,16 +1,13 @@
 import React from 'react'
 import {Card,Button} from 'react-bootstrap'
-
+import './posts.css'
 const Post = (props) => {
 
 
 
   return (
-    <Card style={{margin:"15px",
-    padding:"10px",
-    boxShadow:"5px 10px 18px #888888"}}>
-   
-      <Card.Header style={{display:"flex",justifyContent:"space-between"}}>
+    <Card className='cardPost'>
+      <Card.Header className="cardHeader">
       <Card.Title  >{props.post.author} </Card.Title>
       <Card.Title></Card.Title>
         <Card.Title>{props.post.title}</Card.Title>
@@ -19,11 +16,13 @@ const Post = (props) => {
         <Card.Text>
         {props.post.description}
       </Card.Text>
-      <Card.Text> 
-        {props.tab==="WORKSPACE" &&
-      <Button onClick={()=>{props.remove(props.post)}} className="btn-dark">Delete</Button>}
-      </Card.Text>
+    <div className="buttons">
+     
+     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.remove(props.post)}} size="lg" className="btn-danger">Delete</Button>}
+     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.modal(props.post)}} size="lg" className="btn-dark">Edit</Button>} 
+     </div>
       </Card.Body>
+           
     </Card>
 
   )

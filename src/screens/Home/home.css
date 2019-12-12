@@ -1,0 +1,24 @@
+ .mainHome{
+    display:flex;
+    height:90vh;
+}
+
+.peopleWrapper{
+    border: solid gray;
+    overflow-y: scroll;  
+    min-width:35vh;
+}
+
+.postWrapper{
+    border:solid gray;
+    overflow-y: auto;
+}
+.mainPost{
+    display:flex;
+    flex-direction: column;
+}
+.footerH{
+    background-color: #343a40;
+    color: white;
+    width: -webkit-fill-available;
+} 

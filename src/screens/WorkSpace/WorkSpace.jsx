@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import Posts from '../components/posts/posts'
-import API from '../api/index';
+import Posts from '../../components/posts/posts'
+import API from '../../api/index';
+import {Spinner} from 'react-bootstrap'
 import { Button, Modal, Form } from 'react-bootstrap'
-import Storage from '../services/Storage'
+import Storage from '../../services/Storage'
 import ModalHeader from 'react-bootstrap/ModalHeader';
+import './workspace.css'
+
 const WorkSpace = (tab) => {
     const [posts, setPosts] = useState([]);
     const [newPost, setNewPost] = useState({});
     const [user, setUser] = useState({});
     const [show, setShow] = useState(false);
-
+    const [loading,setLoading] = useState(true)
     
 
     useEffect(() => {
@@ -19,6 +22,7 @@ const WorkSpace = (tab) => {
             .then(data => {
                 if(data.length!==0){
                 data.reverse()
+                setLoading(false)
                 setPosts(data)
             }      
             })
@@ -35,8 +39,25 @@ const WorkSpace = (tab) => {
     }, [])
     const { username, lastname } = user;
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => {
+        setNewPost({
+            ...newPost,
+            title:"",
+            description:""
+            })
+        setShow(false)
+    };
+
+    const handleShow = (item) => {
+        if(item.id){
+            const findedEvent = posts.find((post) => {
+                return post.id === item.id
+              });
+             setNewPost(findedEvent)
+        } 
+        setShow(true)
+        
+    };
 
     const handleInputChangePost = (event) => {
         const { target: { name, value } } = event;
@@ -50,6 +71,20 @@ const WorkSpace = (tab) => {
     }
 
     const onSubmitPost = () => {
+        console.log("post",newPost)
+        if(newPost.id){
+            API.posts.edit(newPost)
+            .then(res=>{
+                if(res.ok){
+                res.json().then((data)=>{
+                   const newList = posts.map(elem => elem.id !== data.id?elem:data)
+                    setPosts(newList)
+                })
+            }})
+            .catch(err=>console.log(err))
+            setShow(false)
+            return
+        }
        API.posts.post(newPost);
        setPosts([...posts,
                 newPost])
@@ -59,44 +94,26 @@ const WorkSpace = (tab) => {
 const onhandleRemove=(item)=>{
     const filtered = posts.filter(elem => elem.id !== item.id)
     API.posts.remove(item.id);
-    setPosts(filtered)
-    
+    setPosts(filtered)   
 }
 
     return (
         <div>
-            <div className="main" style={{
-                border: "solid black 1px",
-                margin: "3vh",
-                backgroundColor: "#343a40"
-            }}>
-                <div className="blogger" style={{
-                    display: "flex",
-                    border: "solid black 1px",
-                    borderRadius: "10px",
-                    height: "20vh",
-                    margin: "3vh",
-                    padding: "3vh",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    backgroundColor: "white"
-                }} >
+            <div className="mainW">
+                <div className="blogger">
                     <div className="name"><h3>{username} {lastname}</h3></div>
                     <div className="createPost">
                         <Button size="lg" onClick={handleShow} className="btn-dark">New Post</Button>
                     </div>
                 </div>
-                <div className="posts" style={{
-                    margin: "3vh",
-                    height: "51vh",
-                    border: "solid black 1px",
-                    overflowY: "auto",
-                    backgroundColor: "white"
-                }}>
-                    {posts.length>0 && posts.map(post => {
-                        return <Posts key={post.id} post={post} tab={tab.tab}  remove={onhandleRemove} personId={post.personId} />
-                    })}
-                    {posts.length===0 && <h2>Create you first post !!!</h2>}
+                <div className="mainPostW">
+                {loading && <Spinner style={{marginTop:"100px"}} animation="border" />}
+                {!loading && 
+                  posts.length>0 && posts.map(post => {
+                        return <Posts key={post.id} post={post} tab={tab.tab} modal={handleShow}  remove={onhandleRemove} personId={post.personId} />
+                    })
+                || posts.length===0 && <h2>Create you first post !!!</h2>
+                }            
                 </div>
 
 
@@ -105,20 +122,20 @@ const onhandleRemove=(item)=>{
                         <Modal.Title name="author">{username} {lastname}</Modal.Title>
                     </Modal.Header>
                     <ModalHeader>
-                        <Form.Control name="title" onChange={handleInputChangePost} placeholder="Write title" />
+                        <Form.Control name="title" value={newPost.title}  onChange={handleInputChangePost} placeholder="Write title" />
                     </ModalHeader>
-                    <Form.Control name="description" onChange={handleInputChangePost} as="textarea" rows="6" placeholder="Write text" />
+                    <Form.Control name="description" value={newPost.description} onChange={handleInputChangePost} as="textarea" rows="6" placeholder="Write text" />
                     <Modal.Footer>
                         <Button className="btn-dark" onClick={handleClose}>
                             Close
                         </Button>
                         <Button className="btn-dark" onClick={onSubmitPost}>
-                            Save Post
+                             {newPost.id ?"Update":"Create"}
                         </Button>
                     </Modal.Footer>
                 </Modal>
             </div>
-            <div style={{ backgroundColor: "#343a40", position: "absolute", bottom: 0, width: "-webkit-fill-available"}}><p style={{ color: "white", bottom: "0" }}>Created By Khoren Ter-Hovhannisyan 2019</p></div>
+            <div className="footerW"><p className="footerWp">Created By Khoren Ter-Hovhannisyan 2019</p></div>
         </div>
     )
 }
