@@ -6,6 +6,8 @@ import { Button, Modal, Form } from 'react-bootstrap'
 import Storage from '../../services/Storage'
 import ModalHeader from 'react-bootstrap/ModalHeader';
 import './workspace.css'
+import image from '../Images/images.jpeg'
+
 
 const WorkSpace = (tab) => {
     const [posts, setPosts] = useState([]);
@@ -101,7 +103,12 @@ const onhandleRemove=(item)=>{
         <div>
             <div className="mainW">
                 <div className="blogger">
+                    <div  className="userData">
+                    
+                        <img alt="" style={{border:"1px solid black",width:"120px",height:"120px",borderRadius:"80px"}} src={image}></img>
+                    
                     <div className="name"><h3>{username} {lastname}</h3></div>
+                    </div>
                     <div className="createPost">
                         <Button size="lg" onClick={handleShow} className="btn-dark">New Post</Button>
                     </div>
@@ -112,7 +119,8 @@ const onhandleRemove=(item)=>{
                   posts.length>0 && posts.map(post => {
                         return <Posts key={post.id} post={post} tab={tab.tab} modal={handleShow}  remove={onhandleRemove} personId={post.personId} />
                     })
-                || posts.length===0 && <h2>Create you first post !!!</h2>
+                }
+                {posts.length===0 && <h2>Create you first post !!!</h2>
                 }            
                 </div>
 
