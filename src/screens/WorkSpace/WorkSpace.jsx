@@ -105,7 +105,7 @@ const onhandleRemove=(item)=>{
                 <div className="blogger">
                     <div  className="userData">
                     
-                        <img alt="" style={{border:"1px solid black",width:"120px",height:"120px",borderRadius:"80px"}} src={image}></img>
+                        <img alt="" style={{border:"1px solid black",width:"30%",borderRadius:"80px"}} src={image}></img>
                     
                     <div className="name"><h3>{username} {lastname}</h3></div>
                     </div>
