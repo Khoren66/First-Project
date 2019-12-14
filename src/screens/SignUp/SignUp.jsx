@@ -24,7 +24,7 @@ const signUpFunc=()=>{
             <Form className="formMain">
                 <Form.Group >
                     <Form.Label>Name</Form.Label>
-                    <Form.Control onChange={handleInputChange} name="firstname" type="text" placeholder="Name" />
+                    <Form.Control onChange={handleInputChange} name="username" type="text" placeholder="Name" />
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Lastname</Form.Label>
