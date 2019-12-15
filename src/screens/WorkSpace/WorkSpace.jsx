@@ -81,6 +81,11 @@ const WorkSpace = (tab) => {
                 res.json().then((data)=>{
                    const newList = posts.map(elem => elem.id !== data.id?elem:data)
                     setPosts(newList)
+                    setNewPost({
+                        ...newPost,
+                        title:"",
+                        description:""
+                        })
                 })
             }})
             .catch(err=>console.log(err))
@@ -104,9 +109,7 @@ const onhandleRemove=(item)=>{
             <div className="mainW">
                 <div className="blogger">
                     <div  className="userData">
-                    
-                        <img alt="" style={{border:"1px solid black",width:"25%",borderRadius:"80px"}} src={image}></img>
-                    
+                        <img alt="" style={{border:"1px solid black",width:"25%",borderRadius:"80px"}} src={image}></img>      
                     <div className="name"><h3>{username} {lastname}</h3></div>
                     </div>
                     <div className="createPost">
