@@ -82,7 +82,6 @@ const WorkSpace = (tab) => {
                    const newList = posts.map(elem => elem.id !== data.id?elem:data)
                     setPosts(newList)
                     setNewPost({
-                        ...newPost,
                         title:"",
                         description:""
                         })

@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <div className="App">
-    <NavCr tab={tab.tab} changeTab={changeTab}/>
+    <NavCr  tab={tab.tab} changeTab={changeTab}/>
     {tab.tab === "HOME" &&<Home tab={tab.tab}/>}
     {tab.tab === "LOGIN" &&<Login changeTab={changeTab}/>}
     {tab.tab === "SIGNUP" &&<SignUp changeTab={changeTab}/>}

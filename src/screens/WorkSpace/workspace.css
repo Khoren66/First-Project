@@ -1,6 +1,7 @@
 .mainW{
     border: solid black 1px;
-    margin: 3vh;
+    margin: 2vh;
+    height: 76vh;
     background-color: #343a40;
 }
 .blogger{
@@ -8,8 +9,8 @@
     border: solid black 1px;
     border-radius: 10px;
     height: 20vh;
-    margin: 3vh;
-    padding: 3vh;
+    margin: 2vh;
+    padding: 2vh;
     justify-content: space-between;
     align-items: center;
     background-color: white;
@@ -17,8 +18,8 @@
     background-size: contain;
 }
 .mainPostW{
-        margin: 3vh;
-        height: 51vh;
+        margin: 2vh;
+        height: 50vh;
         border: solid black 1px;
         overflow-y: auto;
         background-color: white;

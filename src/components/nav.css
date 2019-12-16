@@ -1,4 +1,5 @@
 .nav{
     background-image: url(../screens/Images/navSold.jpg);
     background-size: contain;
+    height: 15vh;
 }
