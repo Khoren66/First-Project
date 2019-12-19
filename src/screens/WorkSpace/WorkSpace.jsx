@@ -114,7 +114,7 @@ const WorkSpace = (tab) => {
                 <div className="blogger">
                     <div className="userData">
                         <img alt="" style={{ border: "1px solid black", width: "80px", borderRadius: "80px" }} src={image}></img>
-                        <div className="name"><h3>{username} {lastname}</h3></div>
+                        <div className="name"><p className="username">{username} {lastname}</p></div>
                     </div>
                     <div className="createPost">
                         <Button size="lg" onClick={handleShow} className="btn-dark">New Post</Button>
