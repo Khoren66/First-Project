@@ -1,29 +1,26 @@
 {
   "files": {
-    "main.css": "/postblog/static/css/main.cf2ccbac.chunk.css",
-    "main.js": "/postblog/static/js/main.9e20db2f.chunk.js",
-    "main.js.map": "/postblog/static/js/main.9e20db2f.chunk.js.map",
+    "main.css": "/postblog/static/css/main.6bf9d6b5.chunk.css",
+    "main.js": "/postblog/static/js/main.248eaf0d.chunk.js",
+    "main.js.map": "/postblog/static/js/main.248eaf0d.chunk.js.map",
     "runtime-main.js": "/postblog/static/js/runtime-main.56a59352.js",
     "runtime-main.js.map": "/postblog/static/js/runtime-main.56a59352.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/postblog/static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.238b1c91.chunk.js": "/postblog/static/js/2.238b1c91.chunk.js",
-    "static/js/2.238b1c91.chunk.js.map": "/postblog/static/js/2.238b1c91.chunk.js.map",
+    "static/js/2.29538600.chunk.js": "/postblog/static/js/2.29538600.chunk.js",
+    "static/js/2.29538600.chunk.js.map": "/postblog/static/js/2.29538600.chunk.js.map",
     "index.html": "/postblog/index.html",
-    "precache-manifest.be422538625917a5498e18feb297fc3e.js": "/postblog/precache-manifest.be422538625917a5498e18feb297fc3e.js",
+    "precache-manifest.964242b3ad1d67daecb903c946294b69.js": "/postblog/precache-manifest.964242b3ad1d67daecb903c946294b69.js",
     "service-worker.js": "/postblog/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/postblog/static/css/2.b0bb7f2c.chunk.css.map",
-    "static/css/main.cf2ccbac.chunk.css.map": "/postblog/static/css/main.cf2ccbac.chunk.css.map",
-    "static/js/2.238b1c91.chunk.js.LICENSE": "/postblog/static/js/2.238b1c91.chunk.js.LICENSE",
-    "static/media/images.jpeg": "/postblog/static/media/images.794b2d35.jpeg",
-    "static/media/nav.png": "/postblog/static/media/nav.95d135d6.png",
-    "static/media/nav.css": "/postblog/static/media/navSold.188d3c14.jpg",
-    "static/media/workspace.css": "/postblog/static/media/star.1a50af46.gif"
+    "static/css/main.6bf9d6b5.chunk.css.map": "/postblog/static/css/main.6bf9d6b5.chunk.css.map",
+    "static/js/2.29538600.chunk.js.LICENSE": "/postblog/static/js/2.29538600.chunk.js.LICENSE",
+    "static/media/images.jpeg": "/postblog/static/media/images.794b2d35.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.56a59352.js",
     "static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.238b1c91.chunk.js",
-    "static/css/main.cf2ccbac.chunk.css",
-    "static/js/main.9e20db2f.chunk.js"
+    "static/js/2.29538600.chunk.js",
+    "static/css/main.6bf9d6b5.chunk.css",
+    "static/js/main.248eaf0d.chunk.js"
   ]
 }
