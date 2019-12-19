@@ -47,8 +47,8 @@ const Login = ({ changeTab }) => {
 
   return (
     <div>
-      <div className='main'>
-        <Form className='formMain'>
+      <div className='mainL'>
+        <Form className='formMainL'>
           <Form.Group controlId="formBasicEmail">
             <Modal  show={showError} onHide={handleClose} animation={false}>
               <Modal.Header className="modalStyle">
@@ -58,7 +58,7 @@ const Login = ({ changeTab }) => {
                 <Button className="btn-dark" onClick={handleClose}>Close</Button>
               </Modal.Footer>
             </Modal>
-            <Form.Label>Email address</Form.Label>
+            <Form.Label >Email address</Form.Label>
             <Form.Control name="email" value={inputs.email} onChange={handleInputChange} type="email" placeholder="Enter email" />
             <Form.Text className="text-muted">
               We'll never controlshare your email with anyone else.

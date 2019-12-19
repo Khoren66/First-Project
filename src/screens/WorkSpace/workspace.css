@@ -2,7 +2,7 @@
     border: solid black 1px;
     margin: 2vh;
     height: 76vh;
-    background-color: #343a40;
+     background-color:#343a40
 }
 .blogger{
     display: flex;
@@ -14,8 +14,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    background-image: url(../Images/star.gif);
-    background-size: contain;
+    /* background-image: url(../Images/star.gif);
+    background-size: contain; */
+    background-color: #1B1464
 }
 .mainPostW{
         margin: 2vh;
@@ -25,21 +26,21 @@
         background-color: white;
 }
 .footerW{
-    background-color: #343a40;
+    background-color: #1B1464;
     position: absolute;
     bottom: 0;
     width: -webkit-fill-available;
 }
 .footerWp{
-    color: white;
+    color: #FFC312;
     bottom: 0;
 }
- 
+
 .userData{
     display: flex;
     align-items: center;
 }
 .name{
     margin-left: 10px;
-    color: white;
+    color: #FFC312;
 }

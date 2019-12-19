@@ -1,21 +1,30 @@
 .formMain{
-    margin-top: 50px;
+    margin-top: 25px;
     padding: 10px;
     border: solid 1px;
     border-radius: 10px;
+    background-color: #0000000F;
+    
 }
 .main{
     display: flex;
     justify-content: center;
 }
 .footerSign{
-    background-color: #343a40;
+    background-color: #1B1464;
     position: absolute;
     bottom: 0;
     width:-webkit-fill-available;
     height: 7vh; 
 }
 .pFooter{
-    color: white;
+    color: #FFC312;
     bottom: 0
+}
+
+.btn-dark{
+    color: #FFC312;
+}
+.btn-danger{
+    color: #FFC312;
 }

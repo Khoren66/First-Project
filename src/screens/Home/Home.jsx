@@ -22,6 +22,7 @@ const Home = (tab) => {
         API.peoples.getList()
             .then(res => res.json())
             .then((data) => {
+                data.reverse()
                 setPeoples(data)
             })
     }, [])

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Posts from '../../components/posts/posts'
 import API from '../../api/index';
-import {Spinner} from 'react-bootstrap'
+import { Spinner } from 'react-bootstrap'
 import { Button, Modal, Form } from 'react-bootstrap'
 import Storage from '../../services/Storage'
 import ModalHeader from 'react-bootstrap/ModalHeader';
@@ -14,19 +14,22 @@ const WorkSpace = (tab) => {
     const [newPost, setNewPost] = useState({});
     const [user, setUser] = useState({});
     const [show, setShow] = useState(false);
-    const [loading,setLoading] = useState(true)
-    
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
         const userid = Storage.get("userId")
         API.peoples.getPostsByID(userid)
-            .then(response => response.json())
-            .then(data => {
-                if(data.length!==0){
-                data.reverse()
-                setLoading(false)
-                setPosts(data)
-            }      
+            .then(response => {
+                response.json()
+                    .then(data => {
+                        console.log(data)
+                        if (data) {
+                            data.reverse()
+                            setPosts(data)
+                        }
+                        setLoading(false)
+                    })
             })
     }, [])
 
@@ -34,9 +37,10 @@ const WorkSpace = (tab) => {
         const userid = Storage.get("userId")
         API.peoples.getByID(userid)
             .then(response => response.json())
-            .then(data => {if(data){
-                setUser(data)
-            }
+            .then(data => {
+                if (data) {
+                    setUser(data)
+                }
             })
     }, [])
     const { username, lastname } = user;
@@ -44,21 +48,21 @@ const WorkSpace = (tab) => {
     const handleClose = () => {
         setNewPost({
             ...newPost,
-            title:"",
-            description:""
-            })
+            title: "",
+            description: ""
+        })
         setShow(false)
     };
 
     const handleShow = (item) => {
-        if(item.id){
+        if (item.id) {
             const findedEvent = posts.find((post) => {
                 return post.id === item.id
-              });
-             setNewPost(findedEvent)
-        } 
+            });
+            setNewPost(findedEvent)
+        }
         setShow(true)
-        
+
     };
 
     const handleInputChangePost = (event) => {
@@ -66,64 +70,67 @@ const WorkSpace = (tab) => {
         setNewPost({
             ...newPost,
             [name]: value,
-            personId:Storage.get("userId"),
-            author:`${username} ${lastname}`
+            personId: Storage.get("userId"),
+            author: `${username} ${lastname}`
         })
         console.log(newPost)
     }
 
     const onSubmitPost = () => {
-        console.log("post",newPost)
-        if(newPost.id){
+        console.log("post", newPost)
+        if (newPost.id) {
             API.posts.edit(newPost)
-            .then(res=>{
-                if(res.ok){
-                res.json().then((data)=>{
-                   const newList = posts.map(elem => elem.id !== data.id?elem:data)
-                    setPosts(newList)
-                    setNewPost({
-                        title:"",
-                        description:""
+                .then(res => {
+                    if (res.ok) {
+                        res.json().then((data) => {
+                            const newList = posts.map(elem => elem.id !== data.id ? elem : data)
+                            setPosts(newList)
+                            setNewPost({
+                                title: "",
+                                description: ""
+                            })
                         })
+                    }
                 })
-            }})
-            .catch(err=>console.log(err))
+                .catch(err => console.log(err))
             setShow(false)
             return
         }
-       API.posts.post(newPost);
-       setPosts([...posts,
-                newPost])
-       setShow(false)
+        API.posts.post(newPost);
+        setPosts([...posts,
+            newPost])
+        setShow(false)
     }
 
-const onhandleRemove=(item)=>{
-    const filtered = posts.filter(elem => elem.id !== item.id)
-    API.posts.remove(item.id);
-    setPosts(filtered)   
-}
+    const onhandleRemove = (item) => {
+        const filtered = posts.filter(elem => elem.id !== item.id)
+        API.posts.remove(item.id);
+        setPosts(filtered)
+    }
 
     return (
         <div>
             <div className="mainW">
                 <div className="blogger">
-                    <div  className="userData">
-                        <img alt="" style={{border:"1px solid black",width:"25%",borderRadius:"80px"}} src={image}></img>      
-                    <div className="name"><h3>{username} {lastname}</h3></div>
+                    <div className="userData">
+                        <img alt="" style={{ border: "1px solid black", width: "25%", borderRadius: "80px" }} src={image}></img>
+                        <div className="name"><h3>{username} {lastname}</h3></div>
                     </div>
                     <div className="createPost">
                         <Button size="lg" onClick={handleShow} className="btn-dark">New Post</Button>
                     </div>
                 </div>
                 <div className="mainPostW">
-                {loading && <Spinner style={{marginTop:"100px"}} animation="border" />}
-                {!loading && 
-                  posts.length>0 && posts.map(post => {
-                        return <Posts key={post.id} post={post} tab={tab.tab} modal={handleShow}  remove={onhandleRemove} personId={post.personId} />
-                    })
-                }
-                {posts.length===0 && <h2>Create you first post !!!</h2>
-                }            
+                    {console.log(loading)}
+                    {loading && <Spinner style={{ marginTop: "100px" }} animation="border" />}
+                    {!loading &&
+                        posts.map(post => {
+                            { console.log(loading) }
+                            return <Posts key={post.id} post={post} tab={tab.tab} modal={handleShow} remove={onhandleRemove} personId={post.personId} />
+                        })
+                    }
+                    {!loading && posts.length === 0 && <h2>Create your first post !!!</h2>
+                    }
                 </div>
 
 
@@ -132,7 +139,7 @@ const onhandleRemove=(item)=>{
                         <Modal.Title name="author">{username} {lastname}</Modal.Title>
                     </Modal.Header>
                     <ModalHeader>
-                        <Form.Control name="title" value={newPost.title}  onChange={handleInputChangePost} placeholder="Write title" />
+                        <Form.Control name="title" value={newPost.title} onChange={handleInputChangePost} placeholder="Write title" />
                     </ModalHeader>
                     <Form.Control name="description" value={newPost.description} onChange={handleInputChangePost} as="textarea" rows="6" placeholder="Write text" />
                     <Modal.Footer>
@@ -140,7 +147,7 @@ const onhandleRemove=(item)=>{
                             Close
                         </Button>
                         <Button className="btn-dark" onClick={onSubmitPost}>
-                             {newPost.id ?"Update":"Create"}
+                            {newPost.id ? "Update" : "Create"}
                         </Button>
                     </Modal.Footer>
                 </Modal>

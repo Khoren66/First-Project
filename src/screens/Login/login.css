@@ -1,22 +1,27 @@
-.formMain{
+.formMainL{
     margin-top: 50px;
     padding: 10px;
     border: solid 1px;
     border-radius: 10px;
+    background-color: #0000000F;
+  
 }
-.main{
+.mainL{
     display: flex;
     justify-content: center;
 }
 .footer{
-    background-color: #343a40;
+    background-color:#1B1464;
     position: absolute;
     bottom: 0;
     width: -webkit-fill-available;
     height: 7vh;
 }
+.form-label{
+color: #FFC312;
+}
 .pFooter{
-    color: white;
+    color: #FFC312;
     bottom: 0
 }
 .modalStyle{
