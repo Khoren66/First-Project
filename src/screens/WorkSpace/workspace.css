@@ -1,14 +1,14 @@
 .mainW{
     border: solid black 1px;
     margin: 2vh;
-    height: 76vh;
+    height: 83vh;
      background-color:#343a40
 }
 .blogger{
     display: flex;
     border: solid black 1px;
     border-radius: 10px;
-    height: 20vh;
+    height: 15vh;
     margin: 2vh;
     padding: 2vh;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 }
 .mainPostW{
         margin: 2vh;
-        height: 50vh;
+        height: 62vh;
         border: solid black 1px;
         overflow-y: auto;
         background-color: white;
