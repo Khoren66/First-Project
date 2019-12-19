@@ -18,8 +18,8 @@ const Post = (props) => {
       </Card.Text>
     <div className="buttons">
      
-     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.remove(props.post)}} size="lg" className="btn-danger">Delete</Button>}
-     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.modal(props.post)}} size="lg" className="btn-dark">Edit</Button>} 
+     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.remove(props.post)}}  className="btn-danger">Delete</Button>}
+     {props.tab==="WORKSPACE" && <Button onClick={()=>{props.modal(props.post)}}  className="btn-dark blue">Edit</Button>} 
      </div>
       </Card.Body>
            

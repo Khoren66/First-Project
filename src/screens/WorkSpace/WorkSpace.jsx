@@ -23,7 +23,6 @@ const WorkSpace = (tab) => {
             .then(response => {
                 response.json()
                     .then(data => {
-                        console.log(data)
                         if (data) {
                             data.reverse()
                             setPosts(data)
@@ -73,11 +72,9 @@ const WorkSpace = (tab) => {
             personId: Storage.get("userId"),
             author: `${username} ${lastname}`
         })
-        console.log(newPost)
     }
 
     const onSubmitPost = () => {
-        console.log("post", newPost)
         if (newPost.id) {
             API.posts.edit(newPost)
                 .then(res => {
@@ -117,15 +114,13 @@ const WorkSpace = (tab) => {
                         <div className="name"><p className="username">{username} {lastname}</p></div>
                     </div>
                     <div className="createPost">
-                        <Button size="lg" onClick={handleShow} className="btn-dark">New Post</Button>
+                        <Button  onClick={handleShow} className="btn-dark">New Post</Button>
                     </div>
                 </div>
                 <div className="mainPostW">
-                    {console.log(loading)}
                     {loading && <Spinner style={{ marginTop: "100px" }} animation="border" />}
                     {!loading &&
                         posts.map(post => {
-                            { console.log(loading) }
                             return <Posts key={post.id} post={post} tab={tab.tab} modal={handleShow} remove={onhandleRemove} personId={post.personId} />
                         })
                     }
@@ -143,10 +138,10 @@ const WorkSpace = (tab) => {
                     </ModalHeader>
                     <Form.Control name="description" value={newPost.description} onChange={handleInputChangePost} as="textarea" rows="6" placeholder="Write text" />
                     <Modal.Footer>
-                        <Button className="btn-dark" onClick={handleClose}>
+                        <Button className="btn-dark blue" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button className="btn-dark" onClick={onSubmitPost}>
+                        <Button className="btn-dark blue" onClick={onSubmitPost}>
                             {newPost.id ? "Update" : "Create"}
                         </Button>
                     </Modal.Footer>

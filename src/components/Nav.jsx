@@ -10,7 +10,7 @@ const signOut=()=>{
     return (
      <Navbar className="nav justify-content-between navBar"  variant="dark">
         <Nav>
-      <Nav.Link style={{color:"#FFC312"}} onClick={()=>changeTab("HOME")} ><h3>BlogNews <span>📰</span></h3></Nav.Link>
+      <Nav.Link style={{color:"#FFC312"}} onClick={()=>changeTab("HOME")} ><h4><b>BlogNews <span>📰</span></b></h4></Nav.Link>
     </Nav>
     <Nav>
      {!Storage.get("token") && <Nav.Link style={{color:"#FFC312"}} onClick={()=>changeTab("LOGIN")} >Login</Nav.Link>} 

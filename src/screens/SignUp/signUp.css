@@ -22,8 +22,11 @@
     bottom: 0
 }
 
-.btn-dark{
+.btn-dark, .blue{
     color: #FFC312;
+}
+.blue{
+    background-color:#1B1464;
 }
 .btn-danger{
     color: #FFC312;

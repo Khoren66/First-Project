@@ -72,9 +72,9 @@ const Login = ({ changeTab }) => {
             display: "flex",
             justifyContent: "space-between"
           }}>
-            <Button onClick={() => changeTab("SIGNUP")} className="btn-dark" variant="primary" type="button">
+            <Button onClick={() => changeTab("SIGNUP")} className="btn-dark blue" variant="primary" type="button">
               Sign Up  </Button>
-            <Button  onClick={onHandleLogin} className="btn-dark" variant="primary" type="button">
+            <Button  onClick={onHandleLogin} className="btn-dark blue" variant="primary" type="button">
               Submit</Button>   
           </div>
         </Form>

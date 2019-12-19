@@ -41,7 +41,7 @@ const signUpFunc=()=>{
                     <Form.Label>Password</Form.Label>
                     <Form.Control onChange={handleInputChange} name="password" type="password" placeholder="Password" />
                 </Form.Group>
-                <Button onClick={signUpFunc} variant="primary" className="btn-dark" type="submit">
+                <Button onClick={signUpFunc} variant="primary" className="btn-dark blue" type="submit">
                     Submit
   </Button>
             </Form>
